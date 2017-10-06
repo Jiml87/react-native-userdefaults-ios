@@ -13,6 +13,13 @@
 
 RCT_EXPORT_MODULE()
 
+RCT_EXPORT_METHOD(setGroup: (NSString *)group callback:(RCTResponseSenderBlock)callback) {
+    
+    [UserDefaultsManager setGroup: (NSString *)group];
+    
+    callback(@[[NSNull null], @"success"]);
+  }
+
 RCT_EXPORT_METHOD(setObjectForKey:(id)object key:(NSString *)key callback:(RCTResponseSenderBlock)callback) {
     
     [UserDefaultsManager setObject:object forKey:key];

@@ -10,6 +10,8 @@
 
 @interface UserDefaultsManager : NSObject
 
++ (void)setGroup:(NSString *)group;
+
 + (void)setObject:(id)object forKey:(NSString *)key;
 
 + (void)setBool:(bool)value forKey:(NSString *)key;

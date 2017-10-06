@@ -11,10 +11,15 @@ var _arrayForKey = Promise.promisify(UserDefaults.arrayForKey);
 var _stringForKey = Promise.promisify(UserDefaults.stringForKey);
 var _objectForKey = Promise.promisify(UserDefaults.objectForKey);
 var _boolForKey = Promise.promisify(UserDefaults.boolForKey);
+var _setGroup = Promise.promisify(UserDefaults.setGroup);
+
 
 var _removeItemForKey = Promise.promisify(UserDefaults.removeObjectForKey);
 
 var UserDefaults = {
+    setGroup(group){
+        return _setGroup(group)
+    },
     setArrayForKey(array, key) {
         return _setObjectForKey(array, key);
     },
